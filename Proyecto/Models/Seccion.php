@@ -22,13 +22,13 @@
 
         public function listar(){
             $sql = "SELECT * FROM seccion";
-            $result = $this->con->query_result($sql);
+            $result = $this->con->query_return($sql);
             return $result;
         }
 
         public function view(){
             $sql = "SELECT * FROM seccion WHERE id = $this->id";
-            $result = $this->con->query_result($sql);
+            $result = $this->con->query_return($sql);
             return pg_fetch_assoc($result);            
         }
 

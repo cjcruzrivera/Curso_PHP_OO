@@ -33,8 +33,8 @@
         public function query_return($sql_query){
             self::get_con();
             $result = pg_query($sql_query) or die('Query failed: ' . pg_last_error());
-            return pg_fetch_all($result);
             pg_close($this->con);
+            return $result;
         }
 
     }

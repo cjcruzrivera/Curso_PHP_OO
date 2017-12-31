@@ -28,7 +28,7 @@
             $sql = "SELECT est.*, secc.nombre as nombre_seccion
                     FROM estudiante est INNER JOIN seccion secc ON est.id_seccion =  secc.id";
             
-            $result = $this->con->query_result($sql);
+            $result = $this->con->query_return($sql);
             return $result;
         }
 
@@ -36,7 +36,7 @@
             $sql = "SELECT est.*, secc.nombre as nombre_seccion
                     FROM estudiante est INNER JOIN seccion secc ON est.id_seccion =  secc.id
                     WHERE est.id = $this->id";
-            $result = $this->con->query_result($sql);
+            $result = $this->con->query_return($sql);
             return pg_fetch_assoc($result);            
         }
 
@@ -61,7 +61,7 @@
     }
 
     // Pruebas
-    // $est = new Estudiante();
-    // $est->set('nombre','prueba');
-    // $est->add();
+    //$est = new Estudiante();
+    //$est->set('nombre','prueba');
+    //$est->add();
 ?>
