@@ -45,6 +45,41 @@
                 header("Location: " . URL . "/estudiantes");
             }
         }
+
+        public function editar($id){
+            $this->estudiante->set("id",$id);            
+            if(!$_POST){
+                $datos = $this->estudiante->view();
+                return $datos;
+            }else{
+                $permitidos = array("image/jpg","image/jpeg","image/png","image/gif");
+                $limite_tamaño = 700*1024;
+                
+                if(in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_tamaño){
+                    $nombre_imagen = $_FILES['imagen']['name'];
+                    $ruta = "Views" . DS . "template" . DS . "imagenes" . DS . $nombre_imagen;
+                    move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta);
+                }else{
+                    $nombre_imagen = $_POST['imagen_old'];
+                }
+
+                $this->estudiante->set("nombre", $_POST['nombre']);
+                $this->estudiante->set("edad", $_POST['edad']);
+                $this->estudiante->set("promedio", $_POST['promedio']);
+                $this->estudiante->set("id_seccion", $_POST['id_seccion']);
+                $this->estudiante->set("imagen", $nombre_imagen);   
+                
+                $this->estudiante->edit();
+                header("Location: " . URL . "/estudiantes");
+                
+            }
+        }
+
+        public function listar_secciones(){
+            $datos = $this->seccion->listar();
+            return $datos;
+        }
     }
 
+    $estudiantes = new estudiantesController();
 ?>
