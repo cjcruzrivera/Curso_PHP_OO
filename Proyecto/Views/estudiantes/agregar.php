@@ -15,19 +15,19 @@
                                                                                                                     alert('estudiante registrado');   
                                                                                                                 }">
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Nombre del estudiante</label>
+				      <label  class="control-label">Nombre del estudiante</label>
 				        <input class="form-control" name="nombre" type="text" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Edad</label>
+				      <label  class="control-label">Edad</label>
 				        <input class="form-control" name="edad" type="number" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Promedio</label>
+				      <label  class="control-label">Promedio</label>
 				        <input class="form-control" name="promedio" type="number" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Sección</label>
+				      <label  class="control-label">Sección</label>
 				      <select name="id_seccion" class="form-control">
                           <option value="0">Seleccione una seccion</option>
                           <?php
@@ -41,7 +41,7 @@
 				      </select>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Imagen</label>
+				      <label  class="control-label">Imagen</label>
 				        <input class="form-control" name="imagen" id="imagen" type="file" required>
 				    </div>
 				    <div class="form-group">

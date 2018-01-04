@@ -14,6 +14,7 @@
                         <th>Nombre</th>
                         <th>Edad</th>
                         <th>Edad</th>
+                        <th>Seccion</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -26,6 +27,7 @@
                             <td><?php echo $row['nombre']; ?></td>
                             <td><?php echo $row['edad']; ?></td>
                             <td><?php echo $row['promedio']; ?></td>
+                            <td><?php echo $row['nombre_seccion']; ?></td>
                             <td><a class = "btn btn-warning" href="<?php echo URL; ?>estudiantes/editar/<?php echo $row['id']; ?>"><span class = "glyphicon glyphicon-edit"></span></a>
                             <a class = "btn btn-danger" href="<?php echo URL; ?>estudiantes/eliminar/<?php echo $row['id']; ?>"><span class = "glyphicon glyphicon-trash"></span></a></td>
                         </tr>

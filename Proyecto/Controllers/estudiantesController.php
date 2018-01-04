@@ -19,10 +19,7 @@
         }
 
         public function agregar(){
-            // $datos = $this->seccion->listar();
-            // return $datos;            
-            // unset($_POST);
-            // print_r($_POST);s
+
             if(!$_POST){
                 $datos = $this->seccion->listar();
                 return $datos;
