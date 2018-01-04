@@ -17,7 +17,6 @@
                 //print_r($ruta);
                 if($ruta[0] == 'index.php'){
                     $this->controlador = 'estudiantes';
-                    array_shift($ruta);
                 }else{
                     $this->controlador = strtolower(array_shift($ruta));
                 }
@@ -28,6 +27,9 @@
                     $this->metodo = 'index';
                 }
                 $this->argumento = $ruta;
+            }else{
+                $this->controlador = "estudiantes";
+                $this->metodo = "index";
             }
         }
 

@@ -8,6 +8,10 @@
             $metodo = $request->get_metodo();
             $argumento = $request->get_argumento();
 
+            if($metodo == "index.php"){
+                $metodo = "index";
+            }
+
             if(is_readable($ruta)){
                 require_once $ruta;
                 $mostrar = "Controllers\\" . $controlador;
@@ -17,6 +21,15 @@
                 }else{
                     call_user_func_array(array($controlador, $metodo),$argumento);
                 }
+            }
+
+            //CARGA DE LA VISTA
+
+            $ruta = ROOT . "Views" . DS . $request->get_controlador() . DS . $request->get_metodo() . ".php";
+            if(is_readable($ruta)){
+                require_once $ruta;
+            }else{
+                print "<h3>NO SE ENCUENTRA LA RUTA </h3>";
             }
         }
     }
