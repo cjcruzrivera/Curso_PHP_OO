@@ -1,6 +1,6 @@
 <?php $secciones = $estudiantes->listar_secciones(); ?>
 <div class="box-principal">
-<h3 class="titulo">Editar estudiante <?php echo $datos['nombre']; ?><hr></h3>
+<h3 class="titulo">Editar estudiantes<hr></h3>
 	<div class="panel panel-success">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Editar estudiante <?php echo $datos['nombre']; ?></h3>
@@ -57,7 +57,6 @@
 				      </select>
 							<script></script>
 				    </div>
-				    <input value="<?php echo $datos['id']; ?>" name="id" type="hidden" required>
 				    <div class="form-group">
 				    	 <button type="submit" class="btn btn-success">Editar</button>
 				        <button type="reset" class="btn btn-warning">Borrar</button>
