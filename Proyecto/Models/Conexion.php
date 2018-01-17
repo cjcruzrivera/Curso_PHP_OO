@@ -2,7 +2,7 @@
 
     class Conexion{
         
-        //At
+        //Atributos
         private $data = array(
             "host" => "localhost",
             "port"=>"5432",
@@ -13,7 +13,7 @@
 
         private $con;
 
-        //Met
+        //Metodos
         private function get_con(){
             $host = $this->data['host'];
             $port = $this->data['port'];
